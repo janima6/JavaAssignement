@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/form.css}">
+<meta charset="ISO-8859-1">
+<title>Show List Search</title>
+
+<style>
+.gtext {
+    color: white;
+    font-size: 110%;
+
+}
+.g {
+    color: white;
+    text-shadow: 2px 2px 5px blue;
+    font-size: 140%;
+}
+</style>
+</head>
+<body>
+
+<div id="webpage" align="center">
+<div id="header">
+<a href="/">
+<img src="Dog.png" width="500px" height="165px" align="left"/>
+
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</a>
+</div>
+
+<div id="content">
+
+<h1> <font color="white"> Dog Details </font></h1>
+<table>
+<tr>
+<th>  <font class="g"> Count </font></th>
+<th>  <font class="g"> Dog Breed </font> </th>
+<th>  <font class="g"> Male Dogs </font></th>
+<th>  <font class="g"> Female Dogs </font> </th>
+<th>  <font class="g"> Male Speciallity Dogs </font> </th>
+<th>  <font class="g"> Femail Speciallity Dogs </font> </th>
+</tr>
+
+<!-- <font color="white"><tr th:text= "${err}"></tr></font>  -->
+<tr th:each= "dog : ${dogList}">
+<td class="gtext" th:text="${dog.bcount}"> </td>
+<td class="gtext" th:text="${dog.breed}"> </td>
+<td class="gtext" th:text="${dog.male}"> </td>
+<td class="gtext" th:text="${dog.female}"> </td>
+<td class="gtext" th:text="${dog.smale}"> </td>
+<td class="gtext" th:text="${dog.sfemale}"> </td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h4> <font color="white"> CopyRight @Malav Jani only</h4>
+</body>
+</html>

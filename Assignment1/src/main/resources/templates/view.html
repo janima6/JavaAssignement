@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>All Dogs</title>
+<link rel="stylesheet" type="text/css" th:href="@{form.css}">
+
+<style>
+.gtext {
+    color: white;
+    font-size: 110%;
+}
+.g {
+    color: white;
+    text-shadow: 2px 2px 5px blue;
+    font-size: 140%;
+}
+
+</style>
+</head>
+<body>
+
+<div id="webpage" align="center">
+
+<div id="header">
+<a href="/">
+<img src="Dog.png" width="500px" height="165px" align="left"/>
+</a>
+
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1> <font color="white"> Dog Details </font></h1>
+<table>
+<tr>
+<th class="g"> Entry Number </th>
+<th class="g">   Dog Name  </th>
+<th class="g">   Owner Name </th>
+<th class="g">   Breed </th>
+<th class="g">   Dog Group  </th>
+<th class="g">   Gender  </th>
+<th class="g">   Ranking </th>
+</tr>
+
+<font color="white"><tr th:text= "${err}"></tr></font>
+<tr class="gtext" th:each= "dog : ${dogList}">
+<td class="gtext" th:text="${dog.entryNumber}"> </td>
+<td  class="gtext" th:text="${dog.dogName}"> </td>
+<td class="gtext" th:text="${dog.ownerName}"> </td>
+<td  class="gtext" th:text="${dog.breed}"> </td>
+<td  class="gtext" th:text="${dog.group}"> </td>
+<td class="gtext" th:text="${dog.gender}"> </td>
+<td class="gtext" th:text="${dog.ranking}"> </td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+</body>
+</html>

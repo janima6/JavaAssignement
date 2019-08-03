@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Dog</title>
+<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+
+<div id="webpage" align="center">
+<div id="header">
+<a href="/">
+<img src="Dog.png" width="500px" height="165px" align="left"/>
+</a>
+
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+
+<div id="content">
+<h1><font color="white">Select Group Here</font></h1>
+<h3><font color="white">Here you will get number of breeds falls in selected group</font></h3>
+<h3><font color="white">You will also get number of male and female dogs, and also number of speciallity dogs according to gender</font></h3>
+<table>
+
+
+  <tr>
+  <td>
+  <li>
+  <form action="GetListByGroup">
+   <font color="red">Select Group</font> 
+<select name="group" size="1">
+
+<option value="SportingDogs"> Sporting Dogs </option>
+
+<option value="hounds"> Hounds  </option>
+
+<option value="WorkingDogs"> Working Dogs </option>
+
+<option value="Terriers"> Terriers </option>
+
+<option value="Toys"> Toys </option>
+
+<option value="Non-Sporting"> Non-Sporting </option>
+
+<option value="Herding"> Herding </option>
+</select>
+<input type="submit" value ="Serach By Group">
+</form>
+</li>
+</td> 
+  </tr>
+  
+</table>
+</div>
+</div>
+</body>
+</html>

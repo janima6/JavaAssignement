@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Dog</title>
+<style type="text/css">
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type=submit] {
+  background-color: Blue;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+table, th, td {
+    border: 1px solid #00ccff;
+    padding: 10px;
+    text-color:white;
+  }
+body {
+  background-color: #008fb3;
+}
+
+#webpage{
+	width:auto;
+	}
+#webpage #header{
+	width:auto;
+	height:100px;
+	vertical-align: top;
+}
+img {
+  display: block;
+  margin-left: 0px;
+  margin-right: auto;
+ 
+}
+#webpage #content{  /*Main Content */
+    margin-top:70px;
+	height:700px;
+	width: 1000px;
+	background-color: #008fb3;
+	}
+	
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left:20px;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+   display: block;
+  background-color: #dddddd;
+}
+</style>
+</head>
+
+<body>
+<div id="webpage" align="center">
+
+<div id="header">
+<img src="/Dog.png" width="500px" height="165px" align="left"/>
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li><form action="aboutus">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="contactus">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+
+
+<div id="content">
+<center>
+<h1> <font color="white">Welcome to Dog Show </font> </h1>
+<p> <font color="white">Here, you can add your dog details. Moreover, you can search your dogs as per the categories. <br>
+In addition to that, you can find count of dogs according to gender and class wise <br>
+</p>
+
+<h2> <font color="white">Add New Dog </font> </h2>
+
+<form action="add" method='get'> 
+
+<TABLE BORDER="1">
+<tr>
+<td> <font color="white"> Dog Name: </font> </td>
+<td>
+<input type="text" name="dogName">
+</td>
+</tr>
+
+<tr>
+<td> <font color="white"> Owner Name: </font> </td>
+ <td> <input type="text" name="OwnerName"> </td>
+</tr>
+
+<tr>
+<td> <font color="white"> Breed </font> </td>
+ <td> <input type="text" name="breed"> </td>
+</tr>
+
+<tr>
+<td> <font color="white">Select Group</font> </td>
+<td> 
+<select name="group" size="1">
+
+<option value="SportingDogs"> Sporting Dogs </option>
+
+<option value="hounds"> Hounds  </option>
+
+<option value="WorkingDogs"> Working Dogs </option>
+
+<option value="Terriers"> Terriers </option>
+
+<option value="Toys"> Toys </option>
+
+<option value="Non-Sporting"> Non-Sporting </option>
+
+<option value="Herding"> Herding </option>
+</select>
+ </td>
+</tr>
+
+<tr>
+
+<td> <font color="white"> Select Gender: </font> </td>
+<td> 
+<select name="gender" size="1">
+
+<option value="male"> Male </option>
+
+<option value="female"> Female </option>
+
+</select>
+ </td>
+</tr>
+
+<tr>
+
+<td> <font color="white"> Ranking </font> </td>
+<td> 
+<select name="ranking" size="1">
+
+<option value="class"> Class </option>
+
+<option value="specialty"> Specialty </option>
+
+</select>
+ </td>
+</tr>
+
+<tr>
+<td> <font color="white"> Who are you? </font> </td>
+<td> 
+<select name="role" size="1">
+
+<option value="dogowner"> Dog Owner </option>
+
+<option value="doghandler"> Dog Handler </option>
+
+</select>
+ </td>
+</tr>
+
+
+
+
+<tr>
+<td> <font color="white"> Select day for the dog show </font> </td>
+<td> 
+<select name="role" size="1">
+
+<option value="friday"> 10th Jan 2019, Firday </option>
+
+<option value="saturday"> 11th Jan 2019, Saturday </option>
+
+<option value="Saunday"> 12th Jan 2019, Sunday </option>
+
+</select>
+ </td>
+</tr>
+
+<span th:text="${message}"></span>
+<span color="white" th:text="${key}">Your Unique Entry Nmber is: </span>
+
+<span th:text="${Error}"></span>
+
+<tr >
+<td colspan="2" align="center">
+<input type="submit" value ="submit">
+</td>
+</tr>
+</TABLE>
+</form>
+<br>
+
+
+</center>
+</div>
+</div>
+<h4> <font color="white"> CopyRight @Malav Jani only</h4>
+</body>
+</html>
